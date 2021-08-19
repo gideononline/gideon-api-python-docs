@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>GIDEON ID Codes &#8212; GIDEON API Wrapper - Python 0.2.0 documentation</title>
+    <title>GIDEON ID Codes &#8212; GIDEON API Wrapper - Python 0.3.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
@@ -35,45 +35,124 @@
             
   <section id="gideon-id-codes">
 <h1>GIDEON ID Codes<a class="headerlink" href="#gideon-id-codes" title="Permalink to this headline">¶</a></h1>
+<p>Each type of item tracked by GIDEON has its own unique identifier.
+The following functions takes the name of a particular item, such as a disease, bacteria, vaccine, country, etc. and returns the corresponding GIDEON ID code.</p>
 <dl class="py function">
-<dt class="sig sig-object py" id="gideon_api.lookup_item">
-<span class="sig-prename descclassname"><span class="pre">gideon_api.</span></span><span class="sig-name descname"><span class="pre">lookup_item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">category</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gideon_api.lookup_item" title="Permalink to this definition">¶</a></dt>
-<dd><p>Looks up the GIDEON ID for a particular item.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>category</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – The GIDEON API to search from such as diseases, vaccines,
-countries, etc. Refer to the <a class="reference internal" href="#gideon_api.get_endpoint" title="gideon_api.get_endpoint"><code class="xref py py-func docutils literal notranslate"><span class="pre">gideon_api.get_endpoint()</span></code></a>
-function documentation for a complete list.</p></li>
-<li><p><strong>item</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – The name of the item, such as a particular disease or bacteria.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]</p>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>If the item is found, the GIDEON API code</p>
+<dt class="sig sig-object py" id="gideon_api.lookup_disease_id">
+<span class="sig-prename descclassname"><span class="pre">gideon_api.</span></span><span class="sig-name descname"><span class="pre">lookup_disease_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">disease</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gideon_api.lookup_disease_id" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="gideon_api.get_endpoint">
-<span class="sig-prename descclassname"><span class="pre">gideon_api.</span></span><span class="sig-name descname"><span class="pre">get_endpoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">category</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gideon_api.get_endpoint" title="Permalink to this definition">¶</a></dt>
-<dd><p>Checks the category refering to a GIDEON API piece with a
-unique identifier.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>category</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – One of the following: ‘diseases’, ‘drugs’, ‘vaccines’,
-‘agents’, ‘vectors’, ‘vehicles’, ‘reservoirs’, ‘bacteria’,
-‘mycobacteria’, ‘yeasts’, ‘countries’, ‘regions’</p>
+<dt class="sig sig-object py" id="gideon_api.lookup_agent_id">
+<span class="sig-prename descclassname"><span class="pre">gideon_api.</span></span><span class="sig-name descname"><span class="pre">lookup_agent_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gideon_api.lookup_agent_id" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gideon_api.lookup_vector_id">
+<span class="sig-prename descclassname"><span class="pre">gideon_api.</span></span><span class="sig-name descname"><span class="pre">lookup_vector_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vector</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gideon_api.lookup_vector_id" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
 </dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A string representing the API endpoint for the particular category
-of items in the GIDEON API</p>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gideon_api.lookup_vehicle_id">
+<span class="sig-prename descclassname"><span class="pre">gideon_api.</span></span><span class="sig-name descname"><span class="pre">lookup_vehicle_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vehicle</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gideon_api.lookup_vehicle_id" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gideon_api.lookup_reservoir_id">
+<span class="sig-prename descclassname"><span class="pre">gideon_api.</span></span><span class="sig-name descname"><span class="pre">lookup_reservoir_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reservoir</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gideon_api.lookup_reservoir_id" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gideon_api.lookup_drug_id">
+<span class="sig-prename descclassname"><span class="pre">gideon_api.</span></span><span class="sig-name descname"><span class="pre">lookup_drug_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">drug</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gideon_api.lookup_drug_id" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gideon_api.lookup_vaccine_id">
+<span class="sig-prename descclassname"><span class="pre">gideon_api.</span></span><span class="sig-name descname"><span class="pre">lookup_vaccine_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vaccine</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gideon_api.lookup_vaccine_id" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gideon_api.lookup_bacteria_id">
+<span class="sig-prename descclassname"><span class="pre">gideon_api.</span></span><span class="sig-name descname"><span class="pre">lookup_bacteria_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bacteria</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gideon_api.lookup_bacteria_id" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gideon_api.lookup_mycobacteria_id">
+<span class="sig-prename descclassname"><span class="pre">gideon_api.</span></span><span class="sig-name descname"><span class="pre">lookup_mycobacteria_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mycobacteria</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gideon_api.lookup_mycobacteria_id" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gideon_api.lookup_yeast_id">
+<span class="sig-prename descclassname"><span class="pre">gideon_api.</span></span><span class="sig-name descname"><span class="pre">lookup_yeast_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yeast</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gideon_api.lookup_yeast_id" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gideon_api.lookup_country_id">
+<span class="sig-prename descclassname"><span class="pre">gideon_api.</span></span><span class="sig-name descname"><span class="pre">lookup_country_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">country</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gideon_api.lookup_country_id" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gideon_api.lookup_region_id">
+<span class="sig-prename descclassname"><span class="pre">gideon_api.</span></span><span class="sig-name descname"><span class="pre">lookup_region_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">region</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gideon_api.lookup_region_id" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -100,10 +179,10 @@ of items in the GIDEON API</p>
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="outbreaks.html">Outbreak Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="export.html">Export Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="disease_filter.html">Filter Diseases</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">GIDEON ID Codes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api_query_wrapper.html">GIDEON API Query Wrapper</a></li>
-<li class="toctree-l1"><a class="reference internal" href="export.html">Export Data</a></li>
 </ul>
 
 <div class="relations">
